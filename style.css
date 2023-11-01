@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.upper {
+    display: flex;
+    justify-content: space-between;
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+}
+
+.bottom {
+    display: flex;
+    flex: 1;
+}
+
+.bottom-left {
+    flex: 1;
+    padding: 20px;
+    background-color: #e74c3c;
+    color: white;
+    text-align: center;
+}
+
+.bottom-right {
+    flex: 4;
+    padding: 20px;
+    background-color: #27ae60;
+    color: white;
+}
+
+.circular-image{
+    border-radius: 50%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Personal Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function validateForm() {
+            var loginName = document.getElementById("loginName");
+            var dateOfBirth = document.getElementById("dateOfBirth");
+            var mobileNumber = document.getElementById("mobileNumber");
+            var email = document.getElementById("email");
+
+            var namePattern = /^[A-Za-z]+$/;
+            if (!namePattern.test(loginName.value)) {
+                alert("Please enter a valid name. Valid name allows only alphabets.");
+                return false;
+            }
+
+            var emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+            if (!emailPattern.test(email.value)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            var mobilePattern = /^[789]\d{9}$/;
+            if (!mobilePattern.test(mobileNumber.value)) {
+                alert("Mobile Number should be a 10-digit numeric value starting with 7, 8 or 9.");
+                return false;
+            }
+
+            var dobpattern = /^\d{2}-\d{2}-\d{4}$/;
+            if (!dobpattern.test(dateOfBirth.value)) {
+                alert("Date of Birth must be in DD-MM-YYYY format (e.g., 16-02-2000).");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="upper">
+        <div class="upper-left">
+            <h1><em>Ankit Singh Rawat</em></h1>
+            <h3>a programmer</h3>
+        </div>
+        <div class="upper-right">
+            <img src="my_photo.jpg" height="110px" width="110px" alt="My Photo" class="circular-image">
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="bottom-left">
+            <br><br>
+            <a href="aboutme.html">About Me</a><br><br><br>
+            <a href="qualification.html">Qualifications</a><br><br><br>
+            <a href="contactme.html">Contact Me</a>
+        </div>
+        <div class="bottom-right">
+            <h1>Get in Touch</h1>
+            <form id="registrationForm" onsubmit="return validateForm()">
+                Enter Your Name:
+                <input type="text" id="loginName" name="loginName" required maxlength="15">
+                <br><br>
+                Mobile Number:
+                <input type="text" id="mobileNumber" name="mobileNumber" required>
+                <br><br>
+                E-mail Address:
+                <input type="text" id="email" name="email" required>
+                <br><br>
+                Gender:
+                <input type = radio name="Gender"/> Male
+                <input type = radio name="Gender"/> Female
+                <br><br>
+                Date of Birth:
+                <input type="text" id="dateOfBirth" name="dateOfBirth" required><br><br>
+                Area of Interest:<br>
+                <input type ="checkbox" name="interest1"/>Web Development<br>
+                <input type="checkbox" name="interest2"/> DevOps<br>
+                <input type="checkbox" name="interest3"/>Cloud Computing<br>
+                <input type="checkbox" name="interest4"/>Machine Learning
+                <br><br>
+                Qualification:
+                <select>
+                    <option>MSc. Mathematics</option>
+                    <option>M.C.A</option>
+                    <option>MSc. Maths with Computer Science</option>
+                    <option>Ph.D.</option>
+                </select>
+                <br><br>
+                Project Undertaken:<br>
+                <textarea name="Project" rows="2" cols="25"></textarea>
+                <br><br>
+                Description:<br>
+                <textarea name="Description" rows="4" cols="50"></textarea>
+                <br><br>
+                <input type="reset">
+                <input type="submit" value="Submit">
+
+                
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
